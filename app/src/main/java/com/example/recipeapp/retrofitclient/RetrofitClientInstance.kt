@@ -6,9 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitClientInstance {
 
     companion object{
-        private lateinit var retrofit: Retrofit
-        private val BASE_URL= "www.themealdb.com/api/json/v1/1/"
-        val retrofitClientInstance:Retrofit
+
+        private val BASE_URL= "https://www.themealdb.com/api/json/v1/1/"
+        private var retrofit: Retrofit? = null
+        val retrofitClientInstance:Retrofit?
             get(){
                 if (retrofit == null){
                     retrofit = retrofit2.Retrofit.Builder()
